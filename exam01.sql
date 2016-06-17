@@ -1,0 +1,11 @@
+DECLARE
+VEMPNO NUMBER;
+VNAME VARCHAR2(10);
+BEGIN
+VEMPNO := 100;
+SELECT first_name INTO VNAME
+FROM employees
+WHERE employee_id = VEMPNO;
+DBMS_OUTPUT.PUT_LINE (VEMPNO ||'번 사원의 이름은 '|| VNAME ||'입니다.');
+END;
+/

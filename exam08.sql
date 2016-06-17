@@ -1,0 +1,48 @@
+--기업체 정보를 출력하시오
+--'1: SAMSUNG/ 2:LG/ 3:SK/ 4:HYUNDAI / 5:DOOSAN '
+--'1월: 10000, 2월:20000, 3월:30000 /
+--'1월: 1000, 2월:2000, 3월:3000 /
+--'1월: 100, 2월:200, 3월:300 /
+--'1월: 10, 2월:20, 3월:30 /
+--'1월: 1, 2월:2, 3월:3 /
+
+/*
+DECLARE
+ unit NUMBER := 10000;
+BEGIN
+FOR i IN 1..5 LOOP --각 5개 기업
+	DBMS_OUTPUT.PUT( i ); 
+	DBMS_OUTPUT.PUT( ',' ); 
+	FOR j IN 1..3 LOOP --3개월 정보
+	 DBMS_OUTPUT.PUT( j * unit); 
+	 DBMS_OUTPUT.PUT( ':'); 
+	END LOOP;
+	DBMS_OUTPUT.NEW_LINE();
+	
+unit := unit *0.1;
+
+END LOOP;
+END;
+*/
+
+
+
+
+DECLARE
+
+GUGU NUMBER;
+DAN NUMBER;
+
+BEGIN
+	DBMS_OUTPUT.PUT_LINE('구구단');
+
+FOR GUGU IN 2..9 LOOP --앞자리
+	DBMS_OUTPUT.PUT_LINE(GUGU || '단');
+ FOR DAN IN 1..9 LOOP --뒷자리
+	DBMS_OUTPUT.PUT(GUGU * DAN || CHR(9));
+ END LOOP; 
+	DBMS_OUTPUT.NEW_LINE();
+	DBMS_OUTPUT.PUT(CHR(10));
+END LOOP;
+END;
+/
